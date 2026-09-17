@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://xev6xgixmfm6"]
+
+[ext_resource type="Script" uid="uid://b0uoh50ayx2od" path="res://Scenes/Test Scenes/a_2.gd" id="1_3aq01"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qk2o7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_de83b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iyneb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mjivu"]
+
+[node name="jasonTest" type="Node3D" unique_id=745173523]
+
+[node name="A" type="Area3D" parent="." unique_id=275454765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08269471, 0.44023466)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="A" unique_id=2133441823]
+shape = SubResource("BoxShape3D_qk2o7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="A/CollisionShape3D" unique_id=1176503214]
+transform = Transform3D(4.661623, 0, 0, 0, 1, 0, 0, 0, 3.3777165, 0, 0, 0)
+mesh = SubResource("BoxMesh_de83b")
+
+[node name="A2" type="Area3D" parent="." unique_id=1028091259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3088887, 0.44023466)
+script = ExtResource("1_3aq01")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="A2" unique_id=156627832]
+shape = SubResource("BoxShape3D_iyneb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="A2/CollisionShape3D" unique_id=568558210]
+mesh = SubResource("BoxMesh_mjivu")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=977520637]
+transform = Transform3D(1, 0, 0, 0, 0.84192914, 0.53958815, 0, -0.53958815, 0.84192914, 0, 1.6541603, 3.4232326)
+fov = 92.81249
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1370104305]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.926691, 0)
+light_volumetric_fog_energy = 0.0
+light_angular_distance = 51.08
