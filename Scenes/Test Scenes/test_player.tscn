@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dpgsr8g8mqka2"]
+
+[ext_resource type="Script" uid="uid://clhp1awkx4ukj" path="res://Scenes/Test Scenes/character_body_3d.gd" id="1_na2o5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3aq01"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qk2o7"]
+
+[node name="TestPlayer" type="CharacterBody3D" unique_id=684845934]
+axis_lock_linear_z = true
+script = ExtResource("1_na2o5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1282361003]
+shape = SubResource("BoxShape3D_3aq01")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1287905454]
+mesh = SubResource("CapsuleMesh_qk2o7")

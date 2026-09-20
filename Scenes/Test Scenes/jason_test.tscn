@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://xev6xgixmfm6"]
 
-[ext_resource type="Script" uid="uid://clhp1awkx4ukj" path="res://Scenes/Test Scenes/character_body_3d.gd" id="1_3aq01"]
+[ext_resource type="PackedScene" uid="uid://dpgsr8g8mqka2" path="res://Scenes/Test Scenes/test_player.tscn" id="1_hayu1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qk2o7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_de83b"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3aq01"]
-size = Vector3(1, 2, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qk2o7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i4i5y"]
 
@@ -32,16 +27,8 @@ shape = SubResource("BoxShape3D_qk2o7")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=1176503214]
 mesh = SubResource("BoxMesh_de83b")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=227079086]
+[node name="TestPlayer" parent="." unique_id=684845934 instance=ExtResource("1_hayu1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3088887, 0.44023466)
-axis_lock_linear_z = true
-script = ExtResource("1_3aq01")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=156627832]
-shape = SubResource("BoxShape3D_3aq01")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D" unique_id=568558210]
-mesh = SubResource("CapsuleMesh_qk2o7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=977520637]
 transform = Transform3D(0.99991435, -0.00025001046, -0.013087178, 0, 0.99981755, -0.01909998, 0.013089566, 0.019098345, 0.9997319, -0.030395508, 3.0286715, 13.534546)
