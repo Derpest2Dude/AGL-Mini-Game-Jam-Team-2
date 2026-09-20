@@ -19,11 +19,11 @@ func _physics_process(delta: float) -> void:
 		jump_accel = JUMP_INITIAL_ACCEL
 		velocity.y = jump_accel + JUMP_VELOCITY
 	
-	if Input.is_action_pressed("jump") and velocity.y >= 0:
+	if Input.is_action_pressed("jump") and velocity.y > 0:
 		velocity.y += jump_accel
 	
 	if jump_accel >= 0:
-		jump_accel -= delta * 9.8
+		jump_accel -= delta * -get_gravity().y
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
