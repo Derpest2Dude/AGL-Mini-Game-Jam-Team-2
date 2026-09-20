@@ -1,12 +1,14 @@
 extends CharacterBody3D
 
 
-const MOVE_SPEED = 10.0
-const MOVE_ACCEL = 0
+const MOVE_SPEED = 15.0
+const MOVE_ACCEL = 1
+const MOVE_DECEL = MOVE_ACCEL * 2
 const GRAVITY = Vector3(0, -9.8, 0) * 5
 const JUMP_VELOCITY = 7
 const JUMP_INITIAL_ACCEL = 2
 var jump_accel = 0
+var direction = 1
 
 
 func _physics_process(delta: float) -> void:
@@ -26,14 +28,17 @@ func _physics_process(delta: float) -> void:
 		jump_accel -= delta * -get_gravity().y
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * MOVE_SPEED
-		velocity.z = direction.z * MOVE_SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, MOVE_SPEED)
-		velocity.z = move_toward(velocity.z, 0, MOVE_SPEED)
+	if Input.is_action_just_pressed("move_left"):
+		direction = -1
+	elif Input.is_action_just_pressed("move_right"):
+		direction = 1
+	if is_on_floor():
+		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+			if velocity.normalized().x == direction:
+				velocity.x = move_toward(velocity.x, MOVE_SPEED * direction, MOVE_ACCEL)
+			elif velocity.normalized().x != direction:
+				velocity.x = move_toward(velocity.x, MOVE_SPEED * direction, MOVE_DECEL)
+		else:
+			velocity.x = move_toward(velocity.x, 0, MOVE_DECEL)
 
 	move_and_slide()
