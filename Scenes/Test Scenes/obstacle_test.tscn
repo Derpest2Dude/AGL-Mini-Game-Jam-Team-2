@@ -25,7 +25,7 @@ sky = SubResource("Sky_owv4k")
 [node name="Node3D" type="Node3D" unique_id=300869962]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=366286402]
-transform = Transform3D(1, 0, 0, 0, 0.87774336, 0.4791311, 0, -0.4791311, 0.87774336, 0, 6.223775, 7.3145237)
+transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.4674941, 0.856425, -0.55567646, 5.318817, 6.6124005)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=549093227]
 environment = SubResource("Environment_3g7ld")
