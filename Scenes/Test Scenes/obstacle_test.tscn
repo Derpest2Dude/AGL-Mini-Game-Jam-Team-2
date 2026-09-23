@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bsn04evquvthj"]
+
+[ext_resource type="PackedScene" uid="uid://csx88k7cqt8dn" path="res://Scenes/Prefabs/obstacle_1.tscn" id="1_8wd6f"]
+[ext_resource type="PackedScene" uid="uid://b88mwjjvxvbqd" path="res://Scenes/Prefabs/obstacle_spawner.tscn" id="2_jj6my"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3pqy4"]
+
+[sub_resource type="Sky" id="Sky_owv4k"]
+sky_material = SubResource("ProceduralSkyMaterial_3pqy4")
+
+[sub_resource type="Environment" id="Environment_3g7ld"]
+background_mode = 2
+sky = SubResource("Sky_owv4k")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3g7ld"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ujmth"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3g7ld"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjnhs"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3pqy4"]
+
+[node name="Node3D" type="Node3D" unique_id=300869962]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=366286402]
+transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.4674941, 0.856425, -0.55567646, 5.318817, 6.6124005)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=549093227]
+environment = SubResource("Environment_3g7ld")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1698724181]
+transform = Transform3D(1, 0, 0, 0, 0.6509218, 0.7591447, 0, -0.7591447, 0.6509218, 0, 4.5079308, 1.8245642)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1385514652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0172997, 0)
+mesh = SubResource("CapsuleMesh_3g7ld")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1675338548]
+physics_material_override = SubResource("PhysicsMaterial_ujmth")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=359526056]
+shape = SubResource("WorldBoundaryShape3D_3g7ld")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=570478198]
+transform = Transform3D(66.94, 0, 0, 0, -8.851556e-07, 38.63, 0, -20.25, -1.6885709e-06, 4.5646257, 0, 0)
+material_override = SubResource("StandardMaterial3D_rjnhs")
+mesh = SubResource("QuadMesh_3pqy4")
+
+[node name="AnimatableBody3D" parent="." unique_id=1339562007 instance=ExtResource("1_8wd6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.820884, 2.63851, -0.91506386)
+
+[node name="ObstacleSpawner" parent="." unique_id=2061460898 instance=ExtResource("2_jj6my")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.57034, 2.7871838, 0)

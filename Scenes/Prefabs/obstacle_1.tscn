@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://csx88k7cqt8dn"]
+
+[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_qqvpf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pqy4"]
+size = Vector3(6, 2.4, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_owv4k"]
+size = Vector3(6, 2.4, 2.5)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1339562007]
+script = ExtResource("1_qqvpf")
+speed = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=534796208]
+shape = SubResource("BoxShape3D_3pqy4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=209053552]
+mesh = SubResource("BoxMesh_owv4k")
