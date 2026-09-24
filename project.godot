@@ -40,6 +40,10 @@ jump={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_2="Edges"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
