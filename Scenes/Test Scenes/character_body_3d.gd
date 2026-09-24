@@ -14,6 +14,8 @@ var mantling = false
 
 func _physics_process(delta: float) -> void:
 	
+	if mantling:
+		velocity.y = 4
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += GRAVITY * delta
@@ -47,15 +49,13 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_ledge_detection_body_entered(body: Node3D) -> void:
-	if body is not CharacterBody3D:
-		
-		mantling = true
-		print(body.get_path())
-		print(mantling)
+	mantling = true
+	print(body.get_path())
+	print(mantling)
 
 
 func _on_ledge_detection_body_exited(body: Node3D) -> void:
-	if body is not CharacterBody3D:
-		mantling = false
-		print(body.get_path())
-		print(mantling)
+	mantling = false
+	velocity.x = 2
+	print(body.get_path())
+	print(mantling)
