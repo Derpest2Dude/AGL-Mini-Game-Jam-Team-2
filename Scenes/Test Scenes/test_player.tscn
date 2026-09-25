@@ -8,10 +8,10 @@ size = Vector3(1, 2, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qk2o7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qk2o7"]
-size = Vector3(0.1, 2.4, 1)
+size = Vector3(0.2, 2.4, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_avojk"]
-size = Vector3(0.1, 2.4, 1)
+size = Vector3(0.2, 2.4, 1)
 
 [node name="TestPlayer" type="CharacterBody3D" unique_id=684845934]
 axis_lock_linear_z = true
@@ -27,7 +27,7 @@ mesh = SubResource("CapsuleMesh_qk2o7")
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LedgeDetection" unique_id=1209264873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550539, 0.29999995, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500539, 0.29999995, 0)
 shape = SubResource("BoxShape3D_qk2o7")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="LedgeDetection/CollisionShape3D" unique_id=1850866964]
