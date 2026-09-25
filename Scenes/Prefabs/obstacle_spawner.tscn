@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://005hdavyyxp2" path="res://Scripts/obstacle_spawner_script.gd" id="1_b8j5g"]
 [ext_resource type="PackedScene" uid="uid://csx88k7cqt8dn" path="res://Scenes/Prefabs/obstacle_1.tscn" id="2_4jrd1"]
 
-
 [node name="ObstacleSpawner" type="Node3D" unique_id=2061460898]
 script = ExtResource("1_b8j5g")
 obstacleList = Array[PackedScene]([ExtResource("2_4jrd1")])
