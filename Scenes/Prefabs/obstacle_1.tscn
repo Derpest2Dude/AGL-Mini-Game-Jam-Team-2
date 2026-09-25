@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://csx88k7cqt8dn"]
+
+[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_qqvpf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pqy4"]
+size = Vector3(6, 2.4, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_owv4k"]
+size = Vector3(6, 2.4, 2.5)
+
+[sub_resource type="Animation" id="Animation_qqvpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sl4gg"]
+resource_name = "obstacle_move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8yb0b"]
+_data = {
+&"RESET": SubResource("Animation_qqvpf"),
+&"obstacle_move": SubResource("Animation_sl4gg")
+}
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1339562007]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_qqvpf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=534796208]
+shape = SubResource("BoxShape3D_3pqy4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=209053552]
+mesh = SubResource("BoxMesh_owv4k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174188589]
+libraries/ = SubResource("AnimationLibrary_8yb0b")
+autoplay = &"obstacle_move"
