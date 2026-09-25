@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://di8s0n1e36iw0"]
+
+[ext_resource type="PackedScene" uid="uid://dpgsr8g8mqka2" path="res://Scenes/Test Scenes/test_player.tscn" id="1_s1yhf"]
+[ext_resource type="PackedScene" uid="uid://b88mwjjvxvbqd" path="res://Scenes/Prefabs/obstacle_spawner.tscn" id="2_tjhd5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
+
+[sub_resource type="Sky" id="Sky_owv4k"]
+sky_material = SubResource("ProceduralSkyMaterial_tjhd5")
+
+[sub_resource type="Environment" id="Environment_su1mf"]
+background_mode = 2
+sky = SubResource("Sky_owv4k")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_me57e"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t1adh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqjen"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_edppp"]
+
+[node name="JakeTest2" type="Node3D" unique_id=1856755249]
+
+[node name="TestPlayer" parent="." unique_id=684845934 instance=ExtResource("1_s1yhf")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1374555293]
+transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.4674941, 0.856425, -0.55567646, 5.318817, 6.6124005)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1862068786]
+environment = SubResource("Environment_su1mf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=2038474780]
+transform = Transform3D(1, 0, 0, 0, 0.6509218, 0.7591447, 0, -0.7591447, 0.6509218, 0, 4.5079308, 1.8245642)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1860815895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3184555, 0)
+physics_material_override = SubResource("PhysicsMaterial_me57e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1122864376]
+shape = SubResource("WorldBoundaryShape3D_t1adh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1458060282]
+transform = Transform3D(66.94, 0, 0, 0, -8.851556e-07, 38.63, 0, -20.25, -1.6885709e-06, 4.5646257, 0, 0)
+material_override = SubResource("StandardMaterial3D_nqjen")
+mesh = SubResource("QuadMesh_edppp")
+
+[node name="ObstacleSpawner" parent="." unique_id=2061460898 instance=ExtResource("2_tjhd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.776, 0, 0)
