@@ -24,8 +24,8 @@ sky = SubResource("Sky_owv4k")
 
 [node name="TestPlayer" parent="." unique_id=684845934 instance=ExtResource("1_s1yhf")]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1374555293]
-transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.4674941, 0.856425, -0.55567646, 5.318817, 6.6124005)
+[node name="Camera3D" type="Camera3D" parent="TestPlayer" unique_id=1374555293]
+transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.4674941, 0.856425, -0.55567646, 4.107602, 6.6124005)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1862068786]
 environment = SubResource("Environment_su1mf")
