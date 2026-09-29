@@ -8,9 +8,13 @@ const JUMP_DECEL = 10
 var jump_accel = 0
 const MOVE_ACCEL = 1
 const MOVE_DECEL = MOVE_ACCEL * 2
-var MOVE_SPEED = 15.0
+const BASE_SPEED = 15.0
+var move_speed = BASE_SPEED
 var direction = 1
 var mantling = false
+
+#replace with platform speed
+const PLATFORM_SPEED = 10
 
 func _physics_process(delta: float) -> void:
 	
@@ -34,14 +38,16 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	if Input.is_action_just_pressed("move_left"):
 		direction = -1
+		move_speed = BASE_SPEED - PLATFORM_SPEED
 	elif Input.is_action_just_pressed("move_right"):
 		direction = 1
+		move_speed = BASE_SPEED + PLATFORM_SPEED
 	if is_on_floor():
 		if (Input.is_action_pressed("move_left") and direction == -1) or (Input.is_action_pressed("move_right") and direction == 1):
 			if velocity.normalized().x == direction:
-				velocity.x = move_toward(velocity.x, MOVE_SPEED * direction, MOVE_ACCEL)
+				velocity.x = move_toward(velocity.x, move_speed * direction, MOVE_ACCEL)
 			elif velocity.normalized().x != direction:
-				velocity.x = move_toward(velocity.x, MOVE_SPEED * direction, MOVE_DECEL)
+				velocity.x = move_toward(velocity.x, move_speed * direction, MOVE_DECEL)
 		else:
 			velocity.x = move_toward(velocity.x, 0, MOVE_DECEL)
 
