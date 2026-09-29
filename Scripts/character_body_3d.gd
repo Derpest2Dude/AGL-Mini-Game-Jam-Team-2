@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 
-const MOVE_SPEED = 15.0
-const MOVE_ACCEL = 1
-const MOVE_DECEL = MOVE_ACCEL * 2
 const GRAVITY = Vector3(0, -9.8, 0) * 5
 const JUMP_VELOCITY = 7
 const JUMP_INITIAL_ACCEL = 2
 const JUMP_DECEL = 10
 var jump_accel = 0
+const MOVE_ACCEL = 1
+const MOVE_DECEL = MOVE_ACCEL * 2
+var MOVE_SPEED = 15.0
 var direction = 1
 var mantling = false
 
