@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpgsr8g8mqka2" path="res://Scenes/Test Scenes/test_player.tscn" id="1_s1yhf"]
 [ext_resource type="PackedScene" uid="uid://b88mwjjvxvbqd" path="res://Scenes/Prefabs/obstacle_spawner.tscn" id="2_tjhd5"]
+[ext_resource type="PackedScene" uid="uid://ccufnjkna0vqw" path="res://Scenes/Test Scenes/pause_menu.tscn" id="3_su1mf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -47,3 +48,5 @@ mesh = SubResource("QuadMesh_edppp")
 
 [node name="ObstacleSpawner" parent="." unique_id=2061460898 instance=ExtResource("2_tjhd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.776, 0, 0)
+
+[node name="PauseMenu" parent="." unique_id=1457369921 instance=ExtResource("3_su1mf")]
