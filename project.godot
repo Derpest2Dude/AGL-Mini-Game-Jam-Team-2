@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="AGL mini game jam team 2"
+run/main_scene="uid://d1gbq2t102m6x"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Assets/Placeholders/icon.svg"
 
