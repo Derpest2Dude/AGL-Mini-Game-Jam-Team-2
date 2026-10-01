@@ -1,19 +1,12 @@
 [gd_scene format=3 uid="uid://ccufnjkna0vqw"]
 
-[ext_resource type="Script" uid="uid://bwj7jd0mx71ic" path="res://Scenes/Test Scenes/pause.gd" id="1_shtp2"]
+[ext_resource type="Script" uid="uid://bwj7jd0mx71ic" path="res://Scripts/pause.gd" id="1_shtp2"]
 
-[node name="PauseMenu" type="Control" unique_id=1457369921]
+[node name="PauseMenu" type="CanvasLayer" unique_id=798658998]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_shtp2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1799255866]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
