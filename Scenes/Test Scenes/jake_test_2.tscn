@@ -21,12 +21,17 @@ sky = SubResource("Sky_owv4k")
 
 [sub_resource type="QuadMesh" id="QuadMesh_edppp"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qk2o7"]
+size = Vector3(1, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_de83b"]
+
 [node name="JakeTest2" type="Node3D" unique_id=1856755249]
 
 [node name="TestPlayer" parent="." unique_id=684845934 instance=ExtResource("1_s1yhf")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1374555293]
-transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.4674941, 0.856425, -0.55567646, 5.318817, 6.6124005)
+transform = Transform3D(0.9757123, 0.10495655, -0.19227496, 0, 0.87774336, 0.47913113, 0.21905601, -0.46749413, 0.856425, -0.55567646, 5.318817, 6.6124)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1862068786]
 environment = SubResource("Environment_su1mf")
@@ -50,3 +55,17 @@ mesh = SubResource("QuadMesh_edppp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.776, 0, 0)
 
 [node name="PauseMenu" parent="." unique_id=1457369921 instance=ExtResource("3_su1mf")]
+
+[node name="LoseBarrier" type="Area3D" parent="." unique_id=1342699419]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="LoseBarrier" unique_id=454459548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.039209, 2.8337402, 0)
+shape = SubResource("BoxShape3D_qk2o7")
+
+[node name="CollisionPolygon3D2" type="CollisionShape3D" parent="LoseBarrier" unique_id=571255732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.350865, 0, 0)
+shape = SubResource("BoxShape3D_de83b")
+
+[node name="CollisionPolygon3D3" type="CollisionShape3D" parent="LoseBarrier" unique_id=627775133]
+
+[node name="CollisionPolygon3D4" type="CollisionShape3D" parent="LoseBarrier" unique_id=673799587]
