@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ctbwv2yg0c01c"]
+
+[ext_resource type="Script" uid="uid://jiadc53a46fh" path="res://Scripts/lose_screen_script.gd" id="1_icpl1"]
+[ext_resource type="Texture2D" uid="uid://crmwm6dmp6lf" path="res://Assets/Sprites/Background.png" id="2_f3eny"]
+
+[node name="Lose Screen" type="Control" unique_id=1194016279]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icpl1")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=770191861]
+position = Vector2(960, 540)
+texture = ExtResource("2_f3eny")
+
+[node name="Button" type="Button" parent="." unique_id=2050130769]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 116.0
+offset_right = 200.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Back to Menu"
+
+[node name="Label" type="Label" parent="." unique_id=826684202]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -74.5
+offset_right = 462.0
+offset_bottom = -5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "you fell off and broke your little toe!!!!!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
