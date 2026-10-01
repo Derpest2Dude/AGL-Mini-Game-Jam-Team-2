@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccufnjkna0vqw" path="res://Scenes/Levels/pause_menu.tscn" id="3_su1mf"]
 [ext_resource type="PackedScene" uid="uid://cl0upop2d21ju" path="res://Scenes/Prefabs/obstacle_2.tscn" id="4_t1adh"]
 [ext_resource type="Texture2D" uid="uid://crmwm6dmp6lf" path="res://Assets/Sprites/Background.png" id="5_t1adh"]
+[ext_resource type="Script" uid="uid://dy1e1jfnsb4t5" path="res://Scripts/lose_barrier.gd" id="7_edppp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -73,6 +74,8 @@ texture = ExtResource("5_t1adh")
 [node name="PauseMenu" parent="." unique_id=1457369921 instance=ExtResource("3_su1mf")]
 
 [node name="LoseBarrier" type="Area3D" parent="." unique_id=1342699419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+script = ExtResource("7_edppp")
 
 [node name="CollisionPolygon3D" type="CollisionShape3D" parent="LoseBarrier" unique_id=454459548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
@@ -92,3 +95,5 @@ debug_color = Color(0.9882353, 0, 0.31764707, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 shape = SubResource("BoxShape3D_me57e")
 debug_color = Color(0.9882353, 0, 0.31764707, 1)
+
+[connection signal="body_entered" from="LoseBarrier" to="LoseBarrier" method="_on_body_entered"]
