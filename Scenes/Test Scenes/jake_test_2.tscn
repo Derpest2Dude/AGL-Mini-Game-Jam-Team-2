@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://csx88k7cqt8dn" path="res://Scenes/Prefabs/obstacle_1.tscn" id="3_me57e"]
 [ext_resource type="PackedScene" uid="uid://cl0upop2d21ju" path="res://Scenes/Prefabs/obstacle_2.tscn" id="4_t1adh"]
 [ext_resource type="Texture2D" uid="uid://crmwm6dmp6lf" path="res://Assets/Sprites/Background.png" id="5_t1adh"]
+[ext_resource type="PackedScene" uid="uid://ccufnjkna0vqw" path="res://Scenes/Test Scenes/pause_menu.tscn" id="3_su1mf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -56,3 +57,4 @@ obstacleList = Array[PackedScene]([ExtResource("3_me57e"), ExtResource("4_t1adh"
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1758700530]
 transform = Transform3D(7.54, 0, 0, 0, 7.54, 0, 0, 0, 7.54, 0.15524995, -16.383575, -31.318632)
 texture = ExtResource("5_t1adh")
+[node name="PauseMenu" parent="." unique_id=1457369921 instance=ExtResource("3_su1mf")]

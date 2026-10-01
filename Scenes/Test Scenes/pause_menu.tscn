@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ccufnjkna0vqw"]
+
+[ext_resource type="Script" uid="uid://bwj7jd0mx71ic" path="res://Scenes/Test Scenes/pause.gd" id="1_shtp2"]
+
+[node name="PauseMenu" type="Control" unique_id=1457369921]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_shtp2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1799255866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -674.1996
+offset_top = -332.625
+offset_right = 674.1996
+offset_bottom = 332.625
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseTitle" type="Label" parent="VBoxContainer" unique_id=388059731]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=1511827934]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Resume"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2093343031]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xev6xgixmfm6"]
 
 [ext_resource type="PackedScene" uid="uid://dpgsr8g8mqka2" path="res://Scenes/Test Scenes/test_player.tscn" id="1_hayu1"]
+[ext_resource type="PackedScene" uid="uid://ccufnjkna0vqw" path="res://Scenes/Test Scenes/pause_menu.tscn" id="2_e3oiw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i4i5y"]
 
@@ -126,3 +127,5 @@ shape = SubResource("BoxShape3D_e3oiw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Block4/Block5/CollisionShape3D" unique_id=21570012]
 mesh = SubResource("BoxMesh_k8c8w")
+
+[node name="PauseMenu" parent="." unique_id=1457369921 instance=ExtResource("2_e3oiw")]
