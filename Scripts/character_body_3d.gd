@@ -12,6 +12,7 @@ const BASE_SPEED = 15.0
 var move_speed = BASE_SPEED
 var direction = 1
 var mantling = false
+const COYOTE_TIME = 0.1
 
 #TODO: replace with platform speed
 const PLATFORM_SPEED = 10
@@ -24,11 +25,19 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += GRAVITY * delta
 	
+	
+	#Coyote time
+	if is_on_floor():
+		$CoyoteTimer.start(COYOTE_TIME)
+	
+	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and not $CoyoteTimer.is_stopped():
 		jump_accel = JUMP_INITIAL_ACCEL
 		velocity.y = jump_accel + JUMP_VELOCITY
-	
+		$CoyoteTimer.stop()
+		
+		
 	if Input.is_action_pressed("jump") and velocity.y > 0:
 		velocity.y += jump_accel
 	

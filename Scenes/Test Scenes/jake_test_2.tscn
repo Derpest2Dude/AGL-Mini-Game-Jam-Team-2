@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://l7j0hh7phocb" path="res://Scenes/Prefabs/level_3_obstacle_5.tscn" id="15_fgw4a"]
 [ext_resource type="PackedScene" uid="uid://dtfkvceom7xjf" path="res://Scenes/Prefabs/level_3_obstacle_6.tscn" id="16_t2hwr"]
 [ext_resource type="PackedScene" uid="uid://j43hjabalewu" path="res://Scenes/Prefabs/level_3_obstacle_7.tscn" id="17_65had"]
+[ext_resource type="Script" uid="uid://dy1e1jfnsb4t5" path="res://Scripts/lose_barrier.gd" id="7_edppp"]
+[ext_resource type="PackedScene" uid="uid://cmqsscwst3q4n" path="res://Scenes/Test Scenes/score.tscn" id="8_1qn4a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -134,6 +136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, 0)
 shape = SubResource("BoxShape3D_3g7ld")
 
 [node name="AnimatableBody3D" parent="." unique_id=1339562007 instance=ExtResource("4_t1adh")]
+[node name="Score" parent="." unique_id=2032495022 instance=ExtResource("8_1qn4a")]
 
 [connection signal="body_entered" from="LoseBarrier" to="LoseBarrier" method="_on_body_entered"]
 [connection signal="body_entered" from="TrashCompactor" to="TrashCompactor" method="_on_body_entered"]
