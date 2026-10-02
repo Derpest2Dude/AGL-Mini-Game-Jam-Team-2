@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmqsscwst3q4n"]
 
 [ext_resource type="Script" uid="uid://b0dpa5j6xpqlr" path="res://Scripts/score.gd" id="1_t1x8i"]
+[ext_resource type="Script" uid="uid://ld731b8oh7r2" path="res://Scripts/score_label.gd" id="2_uxhc0"]
 
 [node name="Score" type="CanvasLayer" unique_id=2032495022]
 script = ExtResource("1_t1x8i")
@@ -20,3 +21,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_uxhc0")
+
+[connection signal="change_text" from="." to="Label" method="_on_score_change_text"]
