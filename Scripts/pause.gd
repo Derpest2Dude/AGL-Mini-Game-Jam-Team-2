@@ -20,4 +20,4 @@ func _on_resume_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	pass #TODO: change scene to main menu
+	get_tree().change_scene_to_file("res://Scenes/Levels/main_menu.tscn")
