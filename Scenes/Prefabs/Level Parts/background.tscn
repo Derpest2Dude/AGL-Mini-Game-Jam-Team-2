@@ -40,203 +40,288 @@ albedo_texture = ExtResource("5_6k2kg")
 albedo_color = Color(0.27108142, 0.25668466, 0.22209558, 1)
 albedo_texture = ExtResource("3_5cqja")
 
-[node name="Foreground" type="Node3D" unique_id=788355424]
+[sub_resource type="Animation" id="Animation_qqvpf"]
+length = 7.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
-[node name="container" parent="." unique_id=743939151 instance=ExtResource("1_y7q2d")]
+[sub_resource type="Animation" id="Animation_sb7yg"]
+resource_name = "background move"
+length = 60.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 60, 1, -200, 0, 0)
+
+[sub_resource type="Animation" id="Animation_yx26n"]
+resource_name = "foreground move"
+length = 7.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 7.5, 1, -100, 0, 0)
+
+[sub_resource type="Animation" id="Animation_sl4gg"]
+resource_name = "obstacle_move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyoc3"]
+_data = {
+&"RESET": SubResource("Animation_qqvpf"),
+&"background move": SubResource("Animation_sb7yg"),
+&"foreground move": SubResource("Animation_yx26n"),
+&"obstacle_move": SubResource("Animation_sl4gg")
+}
+
+[node name="Background" type="Node3D" unique_id=788355424]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=642552889]
+transform = Transform3D(1.25, 0, 0, 0, 1.2074072, -0.32352382, 0, 0.32352382, 1.2074072, 0, 0, 0)
+
+[node name="container" parent="AnimatableBody3D" unique_id=743939151 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -3, 0, 0)
 
-[node name="catwalk" parent="." unique_id=1306641999 instance=ExtResource("2_uh56p")]
+[node name="catwalk" parent="AnimatableBody3D" unique_id=1306641999 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -4, 0, 2)
 
-[node name="catwalk2" parent="." unique_id=1762580377 instance=ExtResource("2_uh56p")]
+[node name="catwalk2" parent="AnimatableBody3D" unique_id=1762580377 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2, 0, 2)
 
-[node name="container2" parent="." unique_id=1198772939 instance=ExtResource("1_y7q2d")]
+[node name="container2" parent="AnimatableBody3D" unique_id=1198772939 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 1, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_73dya")
 
-[node name="container3" parent="." unique_id=1886554537 instance=ExtResource("1_y7q2d")]
+[node name="container3" parent="AnimatableBody3D" unique_id=1886554537 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -2, 1, -2)
 surface_material_override/0 = SubResource("StandardMaterial3D_6k2kg")
 
-[node name="container4" parent="." unique_id=1706905239 instance=ExtResource("1_y7q2d")]
+[node name="container4" parent="AnimatableBody3D" unique_id=1706905239 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 2, 1, -2)
 surface_material_override/0 = SubResource("StandardMaterial3D_2qn2l")
 
-[node name="catwalk3" parent="." unique_id=825596227 instance=ExtResource("2_uh56p")]
+[node name="catwalk3" parent="AnimatableBody3D" unique_id=825596227 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 2)
 
-[node name="catwalk4" parent="." unique_id=1703711710 instance=ExtResource("2_uh56p")]
+[node name="catwalk4" parent="AnimatableBody3D" unique_id=1703711710 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 2, 0, 2)
 
-[node name="container broken 1" parent="." unique_id=576667842 instance=ExtResource("4_o3xlu")]
+[node name="container broken 1" parent="AnimatableBody3D" unique_id=576667842 instance=ExtResource("4_o3xlu")]
 transform = Transform3D(193.18518, -25.881905, -3.0853632e-06, -6.8633163e-13, -1.1920929e-05, 100.00001, -51.763813, -96.592575, -1.1514732e-05, 5, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_to023")
 
-[node name="container broken 2" parent="." unique_id=714786293 instance=ExtResource("5_8xuck")]
+[node name="container broken 2" parent="AnimatableBody3D" unique_id=714786293 instance=ExtResource("5_8xuck")]
 transform = Transform3D(186.60255, 24.999996, 25.88191, -50.000004, -6.6987405, 96.59259, 51.763805, -96.59258, -1.1514733e-05, -6, 1, -2)
 surface_material_override/0 = SubResource("StandardMaterial3D_5p0no")
 
-[node name="barrel" parent="." unique_id=1163405241 instance=ExtResource("7_2qn2l")]
+[node name="barrel" parent="AnimatableBody3D" unique_id=1163405241 instance=ExtResource("7_2qn2l")]
 transform = Transform3D(250, 0, 0, 0, -2.9802322e-05, 199.99998, 0, -249.99998, -2.3841858e-05, -3, 1.5, -0.5)
 
-[node name="barrel2" parent="." unique_id=19752267 instance=ExtResource("7_2qn2l")]
+[node name="barrel2" parent="AnimatableBody3D" unique_id=19752267 instance=ExtResource("7_2qn2l")]
 transform = Transform3D(217.50249, 106.23753, 50.000008, -24.785967, -86.47899, 186.60252, 120.74072, -209.12904, -51.763832, -3.8, 1.5, -0.5)
 
-[node name="box 1" parent="." unique_id=1446349608 instance=ExtResource("8_x11h6")]
+[node name="box 1" parent="AnimatableBody3D" unique_id=1446349608 instance=ExtResource("8_x11h6")]
 transform = Transform3D(28.977772, 7.7645707, 3.3940017e-07, 2.5737432e-14, -1.3113415e-06, 29.999998, 7.764571, -28.977772, -1.2666586e-06, 0.3, 1.3, -0.5)
 
-[node name="box 2" parent="." unique_id=2067191422 instance=ExtResource("9_qv1mb")]
+[node name="box 2" parent="AnimatableBody3D" unique_id=2067191422 instance=ExtResource("9_qv1mb")]
 transform = Transform3D(22.98133, -19.283625, -2.2987874e-06, 0, -3.5762787e-06, 29.999998, -19.283627, -22.98133, -2.7395884e-06, 1.0999999, 1.3000001, 0)
 
-[node name="container5" parent="." unique_id=1877479258 instance=ExtResource("1_y7q2d")]
+[node name="container5" parent="AnimatableBody3D" unique_id=1877479258 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(193.18518, 25.881905, 1.1313341e-06, 0, -4.3711393e-06, 100.00001, 51.763813, -96.59258, -4.2221964e-06, 4, 2, -0.19999999)
 
-[node name="container6" parent="." unique_id=1330312770 instance=ExtResource("1_y7q2d")]
+[node name="container6" parent="AnimatableBody3D" unique_id=1330312770 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(193.18518, -25.881905, -1.1313341e-06, 0, -4.3711393e-06, 100.00001, -51.763813, -96.59258, -4.2221964e-06, -9, -0.6, -1)
 
-[node name="catwalk7" parent="." unique_id=49511578 instance=ExtResource("2_uh56p")]
+[node name="catwalk7" parent="AnimatableBody3D" unique_id=49511578 instance=ExtResource("2_uh56p")]
 transform = Transform3D(96.59259, -25.881905, -3.0853632e-06, 0, -1.1920929e-05, 100.00001, -25.881907, -96.59258, -1.1514732e-05, -9.4, -0.7, 1.2)
 
-[node name="catwalk8" parent="." unique_id=963895496 instance=ExtResource("2_uh56p")]
+[node name="catwalk8" parent="AnimatableBody3D" unique_id=963895496 instance=ExtResource("2_uh56p")]
 transform = Transform3D(96.59259, -25.881905, -3.0853632e-06, 0, -1.1920929e-05, 100.00001, -25.881907, -96.59258, -1.1514732e-05, -7.5, -0.7, 0.7)
 
-[node name="container crane" parent="." unique_id=712299199 instance=ExtResource("10_euier")]
+[node name="container crane" parent="AnimatableBody3D" unique_id=712299199 instance=ExtResource("10_euier")]
 transform = Transform3D(83.65165, -25.8819, -48.296303, -50.000027, 1.7380551e-05, -86.60256, 22.414389, 96.5926, -12.940932, -7, 0.7, 1.4)
 
-[node name="container broken 3" parent="." unique_id=1881654488 instance=ExtResource("5_8xuck")]
+[node name="container broken 3" parent="AnimatableBody3D" unique_id=1881654488 instance=ExtResource("5_8xuck")]
 transform = Transform3D(122.474495, 70.71068, 35.355347, -100.00005, -1.0523468e-05, 86.60256, 122.47452, -70.710686, 35.35534, 4.3, 0, 2.3)
 surface_material_override/0 = SubResource("StandardMaterial3D_x11h6")
 
-[node name="box 4" parent="." unique_id=1109419830 instance=ExtResource("9_qv1mb")]
+[node name="box 4" parent="AnimatableBody3D" unique_id=1109419830 instance=ExtResource("9_qv1mb")]
 transform = Transform3D(25.98076, 14.999999, 1.7881393e-06, 0, -3.5762787e-06, 29.999998, 14.999999, -25.98076, -3.0971482e-06, -10, 1.3000001, 0)
 
-[node name="box 5" parent="." unique_id=424484640 instance=ExtResource("8_x11h6")]
+[node name="box 5" parent="AnimatableBody3D" unique_id=424484640 instance=ExtResource("8_x11h6")]
 transform = Transform3D(25.98076, -14.999996, -6.5567065e-07, 4.0823044e-14, -1.3113415e-06, 29.999998, -14.999999, -25.980759, -1.1356551e-06, -9, 0.70000005, -0.5)
 
-[node name="container7" parent="." unique_id=392323221 instance=ExtResource("1_y7q2d")]
+[node name="container7" parent="AnimatableBody3D" unique_id=392323221 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 14, 0, 0)
 
-[node name="catwalk9" parent="." unique_id=1255216458 instance=ExtResource("2_uh56p")]
+[node name="catwalk9" parent="AnimatableBody3D" unique_id=1255216458 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 13, 0, 2)
 
-[node name="catwalk10" parent="." unique_id=2045660263 instance=ExtResource("2_uh56p")]
+[node name="catwalk10" parent="AnimatableBody3D" unique_id=2045660263 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 15, 0, 2)
 
-[node name="container8" parent="." unique_id=1248241555 instance=ExtResource("1_y7q2d")]
+[node name="container8" parent="AnimatableBody3D" unique_id=1248241555 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 18, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_73dya")
 
-[node name="container9" parent="." unique_id=1900383885 instance=ExtResource("1_y7q2d")]
+[node name="container9" parent="AnimatableBody3D" unique_id=1900383885 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 15, 1, -2)
 surface_material_override/0 = SubResource("StandardMaterial3D_6k2kg")
 
-[node name="container10" parent="." unique_id=925423759 instance=ExtResource("1_y7q2d")]
+[node name="container10" parent="AnimatableBody3D" unique_id=925423759 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(200, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 19, 1, -2)
 surface_material_override/0 = SubResource("StandardMaterial3D_2qn2l")
 
-[node name="catwalk11" parent="." unique_id=618763626 instance=ExtResource("2_uh56p")]
+[node name="catwalk11" parent="AnimatableBody3D" unique_id=618763626 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 17, 0, 2)
 
-[node name="catwalk12" parent="." unique_id=1454246538 instance=ExtResource("2_uh56p")]
+[node name="catwalk12" parent="AnimatableBody3D" unique_id=1454246538 instance=ExtResource("2_uh56p")]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 19, 0, 2)
 
-[node name="container broken 4" parent="." unique_id=1886545227 instance=ExtResource("4_o3xlu")]
+[node name="container broken 4" parent="AnimatableBody3D" unique_id=1886545227 instance=ExtResource("4_o3xlu")]
 transform = Transform3D(193.18518, -25.881905, -3.0853632e-06, -6.8633163e-13, -1.1920929e-05, 100.00001, -51.763813, -96.592575, -1.1514732e-05, 22, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_to023")
 
-[node name="container broken 5" parent="." unique_id=1714079344 instance=ExtResource("5_8xuck")]
+[node name="container broken 5" parent="AnimatableBody3D" unique_id=1714079344 instance=ExtResource("5_8xuck")]
 transform = Transform3D(186.60255, 24.999996, 25.88191, -50.000004, -6.6987405, 96.59259, 51.763805, -96.59258, -1.1514733e-05, 11, 1, -2)
 surface_material_override/0 = SubResource("StandardMaterial3D_5p0no")
 
-[node name="barrel3" parent="." unique_id=863847809 instance=ExtResource("7_2qn2l")]
+[node name="barrel3" parent="AnimatableBody3D" unique_id=863847809 instance=ExtResource("7_2qn2l")]
 transform = Transform3D(250, 0, 0, 0, -2.9802322e-05, 199.99998, 0, -249.99998, -2.3841858e-05, 14, 1.5, -0.5)
 
-[node name="barrel4" parent="." unique_id=1927398175 instance=ExtResource("7_2qn2l")]
+[node name="barrel4" parent="AnimatableBody3D" unique_id=1927398175 instance=ExtResource("7_2qn2l")]
 transform = Transform3D(217.50249, 106.23753, 50.000008, -24.785967, -86.47899, 186.60252, 120.74072, -209.12904, -51.763832, 13.2, 1.5, -0.5)
 
-[node name="box 6" parent="." unique_id=875913154 instance=ExtResource("8_x11h6")]
+[node name="box 6" parent="AnimatableBody3D" unique_id=875913154 instance=ExtResource("8_x11h6")]
 transform = Transform3D(28.977772, 7.7645707, 3.3940017e-07, 2.5737432e-14, -1.3113415e-06, 29.999998, 7.764571, -28.977772, -1.2666586e-06, 17.3, 1.3, -0.5)
 
-[node name="box 7" parent="." unique_id=1300334819 instance=ExtResource("9_qv1mb")]
+[node name="box 7" parent="AnimatableBody3D" unique_id=1300334819 instance=ExtResource("9_qv1mb")]
 transform = Transform3D(22.98133, -19.283625, -2.2987874e-06, 0, -3.5762787e-06, 29.999998, -19.283627, -22.98133, -2.7395884e-06, 18.1, 1.3000001, 0)
 
-[node name="container11" parent="." unique_id=169978310 instance=ExtResource("1_y7q2d")]
+[node name="container11" parent="AnimatableBody3D" unique_id=169978310 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(193.18518, 25.881905, 1.1313341e-06, 0, -4.3711393e-06, 100.00001, 51.763813, -96.59258, -4.2221964e-06, 21, 2, -0.19999999)
 
-[node name="container12" parent="." unique_id=1663757660 instance=ExtResource("1_y7q2d")]
+[node name="container12" parent="AnimatableBody3D" unique_id=1663757660 instance=ExtResource("1_y7q2d")]
 transform = Transform3D(193.18518, -25.881905, -1.1313341e-06, 0, -4.3711393e-06, 100.00001, -51.763813, -96.59258, -4.2221964e-06, 8, -0.6, -1)
 
-[node name="catwalk15" parent="." unique_id=183959160 instance=ExtResource("2_uh56p")]
+[node name="catwalk15" parent="AnimatableBody3D" unique_id=183959160 instance=ExtResource("2_uh56p")]
 transform = Transform3D(96.59259, -25.881905, -3.0853632e-06, 0, -1.1920929e-05, 100.00001, -25.881907, -96.59258, -1.1514732e-05, 7.6000004, -0.7, 1.2)
 
-[node name="catwalk16" parent="." unique_id=69240458 instance=ExtResource("2_uh56p")]
+[node name="catwalk16" parent="AnimatableBody3D" unique_id=69240458 instance=ExtResource("2_uh56p")]
 transform = Transform3D(96.59259, -25.881905, -3.0853632e-06, 0, -1.1920929e-05, 100.00001, -25.881907, -96.59258, -1.1514732e-05, 9.5, -0.7, 0.7)
 
-[node name="container crane2" parent="." unique_id=581542856 instance=ExtResource("10_euier")]
+[node name="container crane2" parent="AnimatableBody3D" unique_id=581542856 instance=ExtResource("10_euier")]
 transform = Transform3D(83.65165, -25.8819, -48.296303, -50.000027, 1.7380551e-05, -86.60256, 22.414389, 96.5926, -12.940932, 10, 0.7, 1.4)
 
-[node name="container broken 6" parent="." unique_id=108007141 instance=ExtResource("5_8xuck")]
+[node name="container broken 6" parent="AnimatableBody3D" unique_id=108007141 instance=ExtResource("5_8xuck")]
 transform = Transform3D(122.474495, 70.71068, 35.355347, -100.00005, -1.0523468e-05, 86.60256, 122.47452, -70.710686, 35.35534, 21.3, 0, 2.3)
 surface_material_override/0 = SubResource("StandardMaterial3D_x11h6")
 
-[node name="box 9" parent="." unique_id=294753298 instance=ExtResource("9_qv1mb")]
+[node name="box 9" parent="AnimatableBody3D" unique_id=294753298 instance=ExtResource("9_qv1mb")]
 transform = Transform3D(25.98076, 14.999999, 1.7881393e-06, 0, -3.5762787e-06, 29.999998, 14.999999, -25.98076, -3.0971482e-06, 7, 1.3000001, 0)
 
-[node name="box 10" parent="." unique_id=794243665 instance=ExtResource("8_x11h6")]
+[node name="box 10" parent="AnimatableBody3D" unique_id=794243665 instance=ExtResource("8_x11h6")]
 transform = Transform3D(25.98076, -14.999996, -6.5567065e-07, 4.0823044e-14, -1.3113415e-06, 29.999998, -14.999999, -25.980759, -1.1356551e-06, 8, 0.70000005, -0.5)
 
-[node name="ship wall segment" parent="." unique_id=488574750 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 1, 0, -5.4)
-
-[node name="ship wall segment2" parent="." unique_id=2010051651 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 3, 0, -5.4)
-
-[node name="ship wall segment3" parent="." unique_id=846496990 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 5, 0, -5.4)
-
-[node name="ship wall segment4" parent="." unique_id=532233166 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -1, 0, -5.4)
-
-[node name="ship wall segment5" parent="." unique_id=323166514 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -3, 0, -5.4)
-
-[node name="ship wall segment6" parent="." unique_id=1734580684 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -5, 0, -5.4)
-
-[node name="ship wall segment7" parent="." unique_id=1007126911 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -7, 0, -5.4)
-
-[node name="ship wall segment8" parent="." unique_id=1911946665 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 7, 0, -5.4)
-
-[node name="ship wall segment9" parent="." unique_id=1672394591 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 9, 0, -5.4)
-
-[node name="ship wall segment10" parent="." unique_id=917633337 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 11, 0, -5.4)
-
-[node name="ship wall segment11" parent="." unique_id=1588772285 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 13, 0, -5.4)
-
-[node name="ship wall segment12" parent="." unique_id=1309159973 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 15, 0, -5.4)
-
-[node name="ship wall segment13" parent="." unique_id=1290440234 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 17, 0, -5.4)
-
-[node name="ship wall segment14" parent="." unique_id=530989053 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 19, 0, -5.4)
-
-[node name="ship wall segment15" parent="." unique_id=802225200 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 21, 0, -5.4)
-
-[node name="ship wall segment16" parent="." unique_id=1615692897 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 23, 0, -5.4)
-
-[node name="ship wall segment17" parent="." unique_id=1305155476 instance=ExtResource("11_2qn2l")]
-transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -9, 0, -5.4)
-
-[node name="container13" parent="." unique_id=1813801090 instance=ExtResource("1_y7q2d")]
-transform = Transform3D(2000, 0, 0, 0, -2.1855694e-05, 100, 0, -500, -4.371139e-06, 8, -2.8, -0.5)
+[node name="container13" parent="AnimatableBody3D" unique_id=1813801090 instance=ExtResource("1_y7q2d")]
+transform = Transform3D(1599.9996, 0, 0, 0, 0, 100, 0, -999.9999, -1.9073486e-06, 7.999998, -2.5374641, 3.5707588)
 surface_material_override/0 = SubResource("StandardMaterial3D_qv1mb")
+
+[node name="ship wall segment3" parent="AnimatableBody3D" unique_id=523610366 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 22.9, -1, -5.8)
+
+[node name="ship wall segment4" parent="AnimatableBody3D" unique_id=1987778825 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 20.9, -1, -5.8)
+
+[node name="ship wall segment5" parent="AnimatableBody3D" unique_id=2059442874 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 18.9, -1, -5.8)
+
+[node name="ship wall segment6" parent="AnimatableBody3D" unique_id=331300395 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 16.9, -1, -5.8)
+
+[node name="ship wall segment7" parent="AnimatableBody3D" unique_id=2053685126 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 14.9, -1, -5.8)
+
+[node name="ship wall segment8" parent="AnimatableBody3D" unique_id=391895806 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 12.9, -1, -5.8)
+
+[node name="ship wall segment9" parent="AnimatableBody3D" unique_id=969480298 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 10.9, -1, -5.8)
+
+[node name="ship wall segment10" parent="AnimatableBody3D" unique_id=1133267111 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 8.9, -1, -5.8)
+
+[node name="ship wall segment11" parent="AnimatableBody3D" unique_id=1691862130 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 6.8999996, -1, -5.8)
+
+[node name="ship wall segment12" parent="AnimatableBody3D" unique_id=388395388 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 4.8999996, -1, -5.8)
+
+[node name="ship wall segment13" parent="AnimatableBody3D" unique_id=457431407 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 2.8999996, -1, -5.8)
+
+[node name="ship wall segment14" parent="AnimatableBody3D" unique_id=224116768 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, 0.8999996, -1, -5.8)
+
+[node name="ship wall segment15" parent="AnimatableBody3D" unique_id=756466846 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -1.1000004, -1, -5.8)
+
+[node name="ship wall segment16" parent="AnimatableBody3D" unique_id=776057356 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -3.1000004, -1, -5.8)
+
+[node name="ship wall segment17" parent="AnimatableBody3D" unique_id=1662200227 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -5.1000004, -1, -5.8)
+
+[node name="ship wall segment18" parent="AnimatableBody3D" unique_id=931133483 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -7.1000004, -1, -5.8)
+
+[node name="ship wall segment19" parent="AnimatableBody3D" unique_id=1771752221 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -9.1, -1, -5.8)
+
+[node name="ship wall segment20" parent="AnimatableBody3D" unique_id=1807439036 instance=ExtResource("11_2qn2l")]
+transform = Transform3D(100, 0, 0, 0, -2.2142103e-06, 99.99999, 0, -18.57414, -1.1920929e-05, -11.1, -1, -5.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=418525702]
+libraries/ = SubResource("AnimationLibrary_qyoc3")
+autoplay = &"background move"

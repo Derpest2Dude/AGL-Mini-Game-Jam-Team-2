@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bramo8gusdl2g" path="res://Scenes/Prefabs/obstacle_gap.tscn" id="7_573wu"]
 [ext_resource type="PackedScene" uid="uid://bfx16quprgiu4" path="res://Scenes/Prefabs/Level Parts/foreground.tscn" id="10_45cum"]
 [ext_resource type="PackedScene" uid="uid://d0r0su1dxiej1" path="res://Scenes/Prefabs/foreground_spawner.tscn" id="11_j2qhu"]
+[ext_resource type="PackedScene" uid="uid://gxaxti6cvb4o" path="res://Scenes/Prefabs/background_spawner.tscn" id="13_t74wh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -60,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.49128, 0, 0)
 obstacleList = Array[PackedScene]([ExtResource("3_me57e"), ExtResource("4_t1adh"), ExtResource("5_edppp"), ExtResource("6_1qn4a"), ExtResource("7_573wu"), ExtResource("3_me57e"), ExtResource("5_edppp"), ExtResource("6_1qn4a"), ExtResource("4_t1adh")])
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1758700530]
-transform = Transform3D(7.54, 0, 0, 0, 7.54, 0, 0, 0, 7.54, 0.15524995, -16.383575, -31.318632)
+transform = Transform3D(7.54, 0, 0, 0, 7.54, 0, 0, 0, 7.54, 0.15524995, -4.3835754, -31.318632)
 texture = ExtResource("5_t1adh")
 
 [node name="PauseMenu" parent="." unique_id=1457369921 instance=ExtResource("3_su1mf")]
@@ -68,3 +69,6 @@ texture = ExtResource("5_t1adh")
 [node name="ForegroundSpawner" parent="." unique_id=1839962339 instance=ExtResource("11_j2qhu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 2, 5)
 obstacleList = Array[PackedScene]([ExtResource("10_45cum")])
+
+[node name="BackgroundSpawner" parent="." unique_id=986977929 instance=ExtResource("13_t74wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 4, -8)
