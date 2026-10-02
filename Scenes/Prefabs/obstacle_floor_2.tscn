@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://csx88k7cqt8dn"]
+[gd_scene format=3 uid="uid://c5uar4cqjir0n"]
 
-[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_qqvpf"]
-[ext_resource type="PackedScene" uid="uid://ubtckanldefg" path="res://Scenes/Prefabs/Level Parts/container_red.tscn" id="2_sl4gg"]
-[ext_resource type="Texture2D" uid="uid://bwq5lua6upnfw" path="res://Assets/Textures/Container.png" id="3_8yb0b"]
+[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_m1orn"]
+[ext_resource type="PackedScene" uid="uid://ubtckanldefg" path="res://Scenes/Prefabs/Level Parts/container_red.tscn" id="2_m4e17"]
+[ext_resource type="Texture2D" uid="uid://bwq5lua6upnfw" path="res://Assets/Textures/Container.png" id="3_itmdy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yb0b"]
-albedo_color = Color(0.30980393, 0.30980393, 0.3764706, 1)
-albedo_texture = ExtResource("3_8yb0b")
+albedo_color = Color(0.5000727, 0.17631799, 0.37530625, 1)
+albedo_texture = ExtResource("3_itmdy")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sl4gg"]
 data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
@@ -15,8 +15,8 @@ data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.0
 radius = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4edna"]
-albedo_color = Color(0.6313726, 0.011764706, 0, 1)
-albedo_texture = ExtResource("3_8yb0b")
+albedo_color = Color(0.32759404, 0.34992152, 0.106559955, 1)
+albedo_texture = ExtResource("3_itmdy")
 
 [sub_resource type="Animation" id="Animation_qqvpf"]
 length = 10.0
@@ -61,9 +61,9 @@ axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-script = ExtResource("1_qqvpf")
+script = ExtResource("1_m1orn")
 
-[node name="container2" parent="." unique_id=743939151 instance=ExtResource("2_sl4gg")]
+[node name="container2" parent="." unique_id=743939151 instance=ExtResource("2_m4e17")]
 transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_8yb0b")
 
@@ -83,7 +83,7 @@ shape = SubResource("SphereShape3D_qk2o7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, 0)
 shape = SubResource("SphereShape3D_qk2o7")
 
-[node name="container" parent="." unique_id=1939465696 instance=ExtResource("2_sl4gg")]
+[node name="container" parent="." unique_id=1939465696 instance=ExtResource("2_m4e17")]
 transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_4edna")
 
