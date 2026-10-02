@@ -27,5 +27,8 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500539, 0.29999995, 0)
 shape = SubResource("BoxShape3D_qk2o7")
 
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1871781097]
+one_shot = true
+
 [connection signal="body_entered" from="LedgeDetection" to="." method="_on_ledge_detection_body_entered"]
 [connection signal="body_exited" from="LedgeDetection" to="." method="_on_ledge_detection_body_exited"]
