@@ -1,7 +1,8 @@
 extends Control
 
 
-
+func _enter_tree() -> void:
+	$Score.text = "Score %.0f" % [Score]
 
 
 func _on_button_pressed() -> void:
