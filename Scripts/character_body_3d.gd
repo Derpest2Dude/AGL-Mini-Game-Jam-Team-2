@@ -2,14 +2,18 @@ extends CharacterBody3D
 
 
 const GRAVITY = Vector3(0, -9.8, 0) * 5
+
 const JUMP_VELOCITY = 7
 const JUMP_INITIAL_ACCEL = 2
 const JUMP_DECEL = 10
 var jump_accel = 0
-const MOVE_ACCEL = 1
+
+const MOVE_ACCEL = 1.2
 const MOVE_DECEL = MOVE_ACCEL * 2
-const BASE_SPEED = 15.0
+
+const BASE_SPEED = 12.0
 var move_speed = BASE_SPEED
+
 var direction = 1
 var mantling = false
 const COYOTE_TIME = 0.1
@@ -47,7 +51,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	if Input.is_action_just_pressed("move_left"):
 		direction = -1
-		move_speed = BASE_SPEED - PLATFORM_SPEED
+		move_speed = BASE_SPEED + 3 - PLATFORM_SPEED
 	elif Input.is_action_just_pressed("move_right"):
 		direction = 1
 		move_speed = BASE_SPEED + PLATFORM_SPEED

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d35dcu0dgbt8g"]
+
+[ext_resource type="Script" uid="uid://005hdavyyxp2" path="res://Scripts/obstacle_spawner_script.gd" id="1_icl4y"]
+[ext_resource type="PackedScene" uid="uid://bdjr7k2obv84c" path="res://Scenes/Prefabs/Level Parts/background.tscn" id="2_f0ndv"]
+
+[node name="FirstBackgroundSpawner" type="Node3D" unique_id=2061460898]
+script = ExtResource("1_icl4y")
+obstacleList = Array[PackedScene]([ExtResource("2_f0ndv")])
+
+[node name="Timer" type="Timer" parent="." unique_id=1826454592]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
