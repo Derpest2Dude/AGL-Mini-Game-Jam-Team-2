@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://b05vnt5dtd7e0"]
+
+[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_6ield"]
+[ext_resource type="PackedScene" uid="uid://ubtckanldefg" path="res://Scenes/Prefabs/Level Parts/container_red.tscn" id="2_ttijq"]
+[ext_resource type="Texture2D" uid="uid://bwq5lua6upnfw" path="res://Assets/Textures/Container.png" id="3_dxuky"]
+[ext_resource type="PackedScene" uid="uid://bqjckkijclmmu" path="res://Scenes/Prefabs/Level Parts/catwalk.tscn" id="4_mc04i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hv2ub"]
+albedo_color = Color(0.249297, 0.37523296, 0.15034783, 1)
+albedo_texture = ExtResource("3_dxuky")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_guwnc"]
+data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qk2o7"]
+radius = 0.001
+
+[sub_resource type="Animation" id="Animation_qqvpf"]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sl4gg"]
+resource_name = "obstacle_move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8yb0b"]
+_data = {
+&"RESET": SubResource("Animation_qqvpf"),
+&"obstacle_move": SubResource("Animation_sl4gg")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nl140"]
+albedo_color = Color(0.12024783, 0.23090732, 0.1813756, 1)
+albedo_texture = ExtResource("3_dxuky")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bc3bv"]
+data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1339562007]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_6ield")
+
+[node name="container2" parent="." unique_id=743939151 instance=ExtResource("2_ttijq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_hv2ub")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=19864833]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 5, 0)
+shape = SubResource("ConcavePolygonShape3D_guwnc")
+
+[node name="Edges2" type="StaticBody3D" parent="." unique_id=320666284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+collision_layer = 2
+
+[node name="Left Edge" type="CollisionShape3D" parent="Edges2" unique_id=2047470951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0995, 0.28714418, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174188589]
+libraries/ = SubResource("AnimationLibrary_8yb0b")
+autoplay = &"obstacle_move"
+
+[node name="container4" parent="." unique_id=968351321 instance=ExtResource("2_ttijq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_nl140")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=2044150385]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_bc3bv")
+
+[node name="Edges4" type="StaticBody3D" parent="." unique_id=1334788325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, 0)
+collision_layer = 2
+
+[node name="Left Edge" type="CollisionShape3D" parent="Edges4" unique_id=421224548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 1.1995001, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="Left Edge2" type="CollisionShape3D" parent="Edges4" unique_id=2118107876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="catwalk" parent="." unique_id=1306641999 instance=ExtResource("4_mc04i")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2, 3, 2.4)
+
+[node name="catwalk2" parent="." unique_id=736073774 instance=ExtResource("4_mc04i")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 3, 2.4)
+
+[node name="catwalk3" parent="." unique_id=2073464463 instance=ExtResource("4_mc04i")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 2, 3, 2.4)

@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://cl0upop2d21ju"]
+[gd_scene format=3 uid="uid://g7qf75jppvah"]
 
-[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_0ymux"]
-[ext_resource type="PackedScene" uid="uid://ubtckanldefg" path="res://Scenes/Prefabs/Level Parts/container_red.tscn" id="2_guwnc"]
-[ext_resource type="Texture2D" uid="uid://bwq5lua6upnfw" path="res://Assets/Textures/Container.png" id="3_bc3bv"]
-[ext_resource type="PackedScene" uid="uid://bqjckkijclmmu" path="res://Scenes/Prefabs/Level Parts/catwalk.tscn" id="4_hv2ub"]
+[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_2gg0y"]
+[ext_resource type="PackedScene" uid="uid://ubtckanldefg" path="res://Scenes/Prefabs/Level Parts/container_red.tscn" id="2_3plm5"]
+[ext_resource type="Texture2D" uid="uid://bwq5lua6upnfw" path="res://Assets/Textures/Container.png" id="3_wc77s"]
+[ext_resource type="PackedScene" uid="uid://d3lpn2i0ecjcr" path="res://Scenes/Prefabs/Level Parts/container_crane.tscn" id="4_e7ljc"]
+[ext_resource type="PackedScene" uid="uid://bqjckkijclmmu" path="res://Scenes/Prefabs/Level Parts/catwalk.tscn" id="5_1ancf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hv2ub"]
-albedo_color = Color(0.249297, 0.37523296, 0.15034783, 1)
-albedo_texture = ExtResource("3_bc3bv")
+albedo_color = Color(0.14078057, 0.37709546, 0.35882783, 1)
+albedo_texture = ExtResource("3_wc77s")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_guwnc"]
 data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
@@ -19,7 +20,7 @@ radius = 0.001
 data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
 
 [sub_resource type="Animation" id="Animation_qqvpf"]
-length = 10.0
+length = 7.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,11 +28,18 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
+"times": PackedFloat32Array(0, 7.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_sl4gg"]
 resource_name = "obstacle_move"
@@ -55,13 +63,9 @@ _data = {
 &"obstacle_move": SubResource("Animation_sl4gg")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yndq5"]
-albedo_color = Color(0.3254902, 0.30588236, 0.03137255, 1)
-albedo_texture = ExtResource("3_bc3bv")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nl140"]
-albedo_color = Color(0.12024783, 0.23090732, 0.1813756, 1)
-albedo_texture = ExtResource("3_bc3bv")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gg0y"]
+albedo_color = Color(0.47634006, 0.20649782, 0.081633545, 1)
+albedo_texture = ExtResource("3_wc77s")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1339562007]
 axis_lock_linear_y = true
@@ -69,9 +73,9 @@ axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-script = ExtResource("1_0ymux")
+script = ExtResource("1_2gg0y")
 
-[node name="container2" parent="." unique_id=743939151 instance=ExtResource("2_guwnc")]
+[node name="container2" parent="." unique_id=743939151 instance=ExtResource("2_3plm5")]
 transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 5, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_hv2ub")
 
@@ -91,31 +95,27 @@ shape = SubResource("SphereShape3D_qk2o7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 0.2876439, 0)
 shape = SubResource("SphereShape3D_qk2o7")
 
-[node name="container" parent="." unique_id=1283765612 instance=ExtResource("2_guwnc")]
-transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 0, 0)
+[node name="container" parent="." unique_id=1283765612 instance=ExtResource("2_3plm5")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 10, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1182817157]
-transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 0, 0)
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 10, 0)
 shape = SubResource("ConcavePolygonShape3D_bc3bv")
 
 [node name="Edges" type="StaticBody3D" parent="." unique_id=1662414132]
 collision_layer = 2
 
 [node name="Left Edge" type="CollisionShape3D" parent="Edges" unique_id=536903816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 1.1995001, 0)
-shape = SubResource("SphereShape3D_qk2o7")
-
-[node name="Left Edge2" type="CollisionShape3D" parent="Edges" unique_id=1536231035]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 11.1995, 0)
 shape = SubResource("SphereShape3D_qk2o7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174188589]
 libraries/ = SubResource("AnimationLibrary_8yb0b")
 autoplay = &"obstacle_move"
 
-[node name="container3" parent="." unique_id=1906016497 instance=ExtResource("2_guwnc")]
+[node name="container3" parent="." unique_id=1906016497 instance=ExtResource("2_3plm5")]
 transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 5, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_yndq5")
+surface_material_override/0 = SubResource("StandardMaterial3D_2gg0y")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=991742172]
 transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 5, 0)
@@ -133,40 +133,23 @@ shape = SubResource("SphereShape3D_qk2o7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 0.2876439, 0)
 shape = SubResource("SphereShape3D_qk2o7")
 
-[node name="container4" parent="." unique_id=968351321 instance=ExtResource("2_guwnc")]
-transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_nl140")
+[node name="container crane" parent="." unique_id=712299199 instance=ExtResource("4_e7ljc")]
+transform = Transform3D(150, 0, 0, 0, -6.5567083e-06, 150, 0, -150, -6.5567083e-06, 0, 12, 0)
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=2044150385]
-transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_bc3bv")
+[node name="catwalk" parent="." unique_id=1306641999 instance=ExtResource("5_1ancf")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2, 3, 2.3)
 
-[node name="Edges4" type="StaticBody3D" parent="." unique_id=1334788325]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, 0)
-collision_layer = 2
+[node name="catwalk2" parent="." unique_id=283314154 instance=ExtResource("5_1ancf")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 3, 2.3)
 
-[node name="Left Edge" type="CollisionShape3D" parent="Edges4" unique_id=421224548]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 1.1995001, 0)
-shape = SubResource("SphereShape3D_qk2o7")
+[node name="catwalk3" parent="." unique_id=134364645 instance=ExtResource("5_1ancf")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 2, 3, 2.3)
 
-[node name="Left Edge2" type="CollisionShape3D" parent="Edges4" unique_id=2118107876]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, 0)
-shape = SubResource("SphereShape3D_qk2o7")
+[node name="catwalk4" parent="." unique_id=841894659 instance=ExtResource("5_1ancf")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 4, 3, 2.3)
 
-[node name="catwalk" parent="." unique_id=1306641999 instance=ExtResource("4_hv2ub")]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2, 3, 2.4)
+[node name="catwalk5" parent="." unique_id=296251013 instance=ExtResource("5_1ancf")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 6, 3, 2.3)
 
-[node name="catwalk2" parent="." unique_id=736073774 instance=ExtResource("4_hv2ub")]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 3, 2.4)
-
-[node name="catwalk3" parent="." unique_id=2073464463 instance=ExtResource("4_hv2ub")]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 2, 3, 2.4)
-
-[node name="catwalk4" parent="." unique_id=28606633 instance=ExtResource("4_hv2ub")]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 4, 3, 2.4)
-
-[node name="catwalk5" parent="." unique_id=1702674783 instance=ExtResource("4_hv2ub")]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 6, 3, 2.4)
-
-[node name="catwalk6" parent="." unique_id=1077508966 instance=ExtResource("4_hv2ub")]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 8, 3, 2.4)
+[node name="catwalk6" parent="." unique_id=552914087 instance=ExtResource("5_1ancf")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 8, 3, 2.3)

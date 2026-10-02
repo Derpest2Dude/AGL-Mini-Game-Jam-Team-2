@@ -3,15 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://dpgsr8g8mqka2" path="res://Scenes/Test Scenes/test_player.tscn" id="1_s1yhf"]
 [ext_resource type="PackedScene" uid="uid://b88mwjjvxvbqd" path="res://Scenes/Prefabs/obstacle_spawner.tscn" id="2_tjhd5"]
 [ext_resource type="PackedScene" uid="uid://csx88k7cqt8dn" path="res://Scenes/Prefabs/obstacle_1.tscn" id="3_me57e"]
-[ext_resource type="PackedScene" uid="uid://ccufnjkna0vqw" path="res://Scenes/Test Scenes/pause_menu.tscn" id="3_su1mf"]
+[ext_resource type="PackedScene" uid="uid://ccufnjkna0vqw" path="res://Scenes/Levels/pause_menu.tscn" id="3_su1mf"]
 [ext_resource type="PackedScene" uid="uid://cl0upop2d21ju" path="res://Scenes/Prefabs/obstacle_2.tscn" id="4_t1adh"]
 [ext_resource type="PackedScene" uid="uid://c5uar4cqjir0n" path="res://Scenes/Prefabs/obstacle_floor_2.tscn" id="5_edppp"]
 [ext_resource type="Texture2D" uid="uid://crmwm6dmp6lf" path="res://Assets/Sprites/Background.png" id="5_t1adh"]
 [ext_resource type="PackedScene" uid="uid://c3w7ik80skx7" path="res://Scenes/Prefabs/level_3_obstacle_1.tscn" id="6_1qn4a"]
 [ext_resource type="PackedScene" uid="uid://bramo8gusdl2g" path="res://Scenes/Prefabs/obstacle_gap.tscn" id="7_573wu"]
+[ext_resource type="Script" uid="uid://dy1e1jfnsb4t5" path="res://Scripts/lose_barrier.gd" id="7_edppp"]
+[ext_resource type="PackedScene" uid="uid://g7qf75jppvah" path="res://Scenes/Prefabs/level_3_obstacle_2.tscn" id="8_8bic4"]
+[ext_resource type="PackedScene" uid="uid://b57nhmxq0imt7" path="res://Scenes/Prefabs/level_3_obstacle_3.tscn" id="9_m6o1i"]
 [ext_resource type="PackedScene" uid="uid://bfx16quprgiu4" path="res://Scenes/Prefabs/Level Parts/foreground.tscn" id="10_45cum"]
+[ext_resource type="PackedScene" uid="uid://c030wvds8qs5y" path="res://Scenes/Prefabs/level_2_obstacle_2.tscn" id="10_xuq51"]
 [ext_resource type="PackedScene" uid="uid://d0r0su1dxiej1" path="res://Scenes/Prefabs/foreground_spawner.tscn" id="11_j2qhu"]
+[ext_resource type="PackedScene" uid="uid://coxet81hvjp0f" path="res://Scenes/Prefabs/level_2_obstacle_3.tscn" id="11_lfosh"]
+[ext_resource type="PackedScene" uid="uid://b05vnt5dtd7e0" path="res://Scenes/Prefabs/level_2_obstacle_4.tscn" id="12_ar3cy"]
+[ext_resource type="PackedScene" uid="uid://do8vnekg0hmuq" path="res://Scenes/Prefabs/level_2_obstacle_5.tscn" id="13_1rlx1"]
 [ext_resource type="PackedScene" uid="uid://gxaxti6cvb4o" path="res://Scenes/Prefabs/background_spawner.tscn" id="13_t74wh"]
+[ext_resource type="Script" uid="uid://dwbdripvpxba7" path="res://Scripts/trash_compactor.gd" id="14_ce3uo"]
+[ext_resource type="PackedScene" uid="uid://c6qihox1lkb45" path="res://Scenes/Prefabs/level_3_obstacle_4.tscn" id="14_fgw4a"]
+[ext_resource type="PackedScene" uid="uid://l7j0hh7phocb" path="res://Scenes/Prefabs/level_3_obstacle_5.tscn" id="15_fgw4a"]
+[ext_resource type="PackedScene" uid="uid://dtfkvceom7xjf" path="res://Scenes/Prefabs/level_3_obstacle_6.tscn" id="16_t2hwr"]
+[ext_resource type="PackedScene" uid="uid://j43hjabalewu" path="res://Scenes/Prefabs/level_3_obstacle_7.tscn" id="17_65had"]
 [ext_resource type="Script" uid="uid://dy1e1jfnsb4t5" path="res://Scripts/lose_barrier.gd" id="7_edppp"]
 [ext_resource type="PackedScene" uid="uid://cmqsscwst3q4n" path="res://Scenes/Test Scenes/score.tscn" id="8_1qn4a"]
 
@@ -34,16 +46,19 @@ sky = SubResource("Sky_owv4k")
 flip_faces = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qk2o7"]
-size = Vector3(1, 10, 1)
+size = Vector3(1, 20, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_de83b"]
-size = Vector3(16, 1, 1)
+size = Vector3(50, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_su1mf"]
-size = Vector3(1, 10, 1)
+size = Vector3(1, 20, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_me57e"]
 size = Vector3(16, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3g7ld"]
+size = Vector3(1, 50, 50)
 
 [node name="JakeTest2" type="Node3D" unique_id=1856755249]
 
@@ -51,6 +66,7 @@ size = Vector3(16, 1, 1)
 transform = Transform3D(0.9993017, 0.033510674, -0.016531099, -0.026447663, 0.946841, 0.320613, 0.026396278, -0.3199519, 0.947066, -0.55567646, 8.849363, 10.462611)
 
 [node name="TestPlayer" parent="." unique_id=684845934 instance=ExtResource("1_s1yhf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1862068786]
 environment = SubResource("Environment_su1mf")
@@ -66,13 +82,13 @@ physics_material_override = SubResource("PhysicsMaterial_me57e")
 shape = SubResource("WorldBoundaryShape3D_t1adh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1458060282]
-transform = Transform3D(66.94, 0, 0, 0, -8.851556e-07, 38.63, 0, -20.25, -1.6885709e-06, 4.5646257, 0, 0)
+transform = Transform3D(66.94, 0, 0, 0, -8.851556e-07, 38.63, 0, -20.25, -1.6885709e-06, 4.5646257, -8, 0)
 material_override = SubResource("StandardMaterial3D_nqjen")
 mesh = SubResource("QuadMesh_edppp")
 
 [node name="ObstacleSpawner" parent="." unique_id=2061460898 instance=ExtResource("2_tjhd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.49128, 0, 0)
-obstacleList = Array[PackedScene]([ExtResource("3_me57e"), ExtResource("4_t1adh"), ExtResource("5_edppp"), ExtResource("6_1qn4a"), ExtResource("7_573wu"), ExtResource("3_me57e"), ExtResource("5_edppp"), ExtResource("6_1qn4a"), ExtResource("4_t1adh")])
+obstacleList = Array[PackedScene]([ExtResource("3_me57e"), ExtResource("4_t1adh"), ExtResource("5_edppp"), ExtResource("6_1qn4a"), ExtResource("7_573wu"), ExtResource("8_8bic4"), ExtResource("9_m6o1i"), ExtResource("10_xuq51"), ExtResource("5_edppp"), ExtResource("11_lfosh"), ExtResource("12_ar3cy"), ExtResource("13_1rlx1"), ExtResource("14_fgw4a"), ExtResource("15_fgw4a"), ExtResource("16_t2hwr"), ExtResource("17_65had"), null])
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1758700530]
 transform = Transform3D(7.54, 0, 0, 0, 7.54, 0, 0, 0, 7.54, 0.15524995, -4.3835754, -31.318632)
@@ -86,29 +102,41 @@ obstacleList = Array[PackedScene]([ExtResource("10_45cum")])
 
 [node name="BackgroundSpawner" parent="." unique_id=986977929 instance=ExtResource("13_t74wh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 4, -8)
+
 [node name="LoseBarrier" type="Area3D" parent="." unique_id=1342699419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 script = ExtResource("7_edppp")
 
 [node name="CollisionPolygon3D" type="CollisionShape3D" parent="LoseBarrier" unique_id=454459548]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 9, 0)
 shape = SubResource("BoxShape3D_qk2o7")
 debug_color = Color(0.9882353, 0, 0.31764707, 1)
 
 [node name="CollisionPolygon3D2" type="CollisionShape3D" parent="LoseBarrier" unique_id=571255732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 shape = SubResource("BoxShape3D_de83b")
 debug_color = Color(0.9882353, 0, 0.31764707, 1)
 
 [node name="CollisionPolygon3D3" type="CollisionShape3D" parent="LoseBarrier" unique_id=627775133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 9, 0)
 shape = SubResource("BoxShape3D_su1mf")
 debug_color = Color(0.9882353, 0, 0.31764707, 1)
 
 [node name="CollisionPolygon3D4" type="CollisionShape3D" parent="LoseBarrier" unique_id=673799587]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, 0)
 shape = SubResource("BoxShape3D_me57e")
 debug_color = Color(0.9882353, 0, 0.31764707, 1)
 
+[node name="TrashCompactor" type="Area3D" parent="." unique_id=1040919266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+script = ExtResource("14_ce3uo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashCompactor" unique_id=1759655525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, 0)
+shape = SubResource("BoxShape3D_3g7ld")
+
+[node name="AnimatableBody3D" parent="." unique_id=1339562007 instance=ExtResource("4_t1adh")]
 [node name="Score" parent="." unique_id=2032495022 instance=ExtResource("8_1qn4a")]
 
 [connection signal="body_entered" from="LoseBarrier" to="LoseBarrier" method="_on_body_entered"]
+[connection signal="body_entered" from="TrashCompactor" to="TrashCompactor" method="_on_body_entered"]
