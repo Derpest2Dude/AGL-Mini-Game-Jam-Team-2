@@ -1,0 +1,52 @@
+[gd_scene format=4 uid="uid://6epjek8sq0je"]
+
+[ext_resource type="Texture2D" uid="uid://blud75yovgwqc" path="res://Assets/Textures/Images and textures/Broken Container.png" id="1_py2du"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wn5ko"]
+resource_name = "Material.003"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qeyh4"]
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.020000001, 0.02),
+"format": 34359742465,
+"index_count": 120,
+"index_data": PackedByteArray("AgASAAAAAAASAAgAEwASAAIABgAIABIAEgATAAYACQAIAAYACAAJAAAABgAHAAkAAAAJAAcABQAHAAYABwAFAAAABgATAAUAAAABAAIABAABAAAAAAAFAAQAAwACAAEAAgADABMAAQAEAAMABQATAAMAAwAEAAUACwARABQADgARAAsAFAARAA4ACwAKAA4ADgAKABUAFQAKAAsADgAWABQAFQAWAA4AFAAWAA8ADwAWABUAFAAXAAsACwAXABUADwAQABQAFwAUABAAFQANAA8AEAAMABcAFQAXAAwADAAQAA8ADAANABUADwANAAwA"),
+"lods": [0.006412668, PackedByteArray("AAABAAIAAwACAAEAAQAEAAMABAABAAAAAwAEAAUAAAAFAAQABQAGAAMAAgADAAYABwAFAAAABQAHAAYAAAACAAgABgAIAAIAAAAJAAcABgAHAAkACAAJAAAACQAIAAYACgALAAwADAANAAoACwAKAA4ACgANAA8ADwANAAwADwAOAAoAEAAMAAsADAAQAA8ADgARAAsACwARABAAEQAOAA8ADwAQABEA")],
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("l0reugrXI7wAAAAASTyOugrXI7wK1yO8CtcjvArXI7wK1yO8CtcjvArXIzwK1yO8STyOugrXIzwK1yO82K2TuwzXIzyPwnUvCtcjvArXIzwK1yM8/YPdOgrXIzwK1yM8CtcjvArXI7wK1yM8G7A2ugrXI7wK1yM88T7HuQrXI7wK1yM8CtcjPArXI7wK1yM8CtcjPArXI7wK1yO8cQpUugrXI7wK1yO8QG5FOwrXIzwK1yM8PXZBuArXIzwK1yO8CtcjPArXIzwK1yO8CtcjPArXIzwK1yM8CtcjvArXI7wAAAAACtcjvArXIzwAAAAACtcjPArXIzwAAAAAOk4QOwrXI7wAAAAAqA6JuwrXIzwAAAAACtcjPArXI7wAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_llne8"]
+resource_name = "Cube_003"
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.020000001, 0.02),
+"attribute_data": PackedByteArray("r8L/Pug0Aj4jIr8+4E/lPSMivz4AaBK6nDEgPwBoErqcMSA/cFnvPZunwD4QKn8+3hsgPzi+fz7eGyA/YID/PpunwD5MNv8+nDEgP9CO8D2cMSA/+HF+PiMivz74cX4+IyK/PtB45T35QSA/po0/P/lBID9bxn8/SiHAPne6fz9KIcA+woE/PxPDAD+lzhM/IljCPp4rAD8TWiA/nisAPyJYwj5g8iU/E1ogP3YLHj8iWMI+3Ps+PyJYwj5g8iU/E1ogP3YLHj8TWiA/3Ps+P8Cknj3gV2Y/wqSePdKbJz9WdUw+eKsnP9IvSz7JlGY/lLOlPsw2Zj/SL0s+yZRmP1Z1TD54qyc/XCmlPjChJz/Xx6U+efdlP7ZTnj26DmY/tlOePQT3Jz+fEqU+528nP0XKhj6Yaf4+o2CEPpTHfz5M6b8+lMd/Pkzpvz6Yaf4+tl8DPphp/j62XwM+lMd/PqNghD6Ux38+RcqGPphp/j46X18/1uH8PkTDPj/W4fw+pudGPxizfj46X18/GLN+PkTDPj/W4fw+GDAhP9bh/D4YMCE/GLN+PqbnRj8Ys34+r8L/PgBoErreGyA/vq+/PpunwD6qZb8+UCkAP2nAfz9QKQA/tIc/P6/C/z7oNAI+r8L/Pvhxfj4uJks+hTwnP5dpUD4W9GY/E8MAP54rAD8TwwA/3Ps+PxPDAD+lzhM/l2lQPhb0Zj8uJks+hTwnPxPDAD+lzhM/E8MAP54rAD8TwwA/3Ps+PxPDAD+lzhM/r8L/Pug0Aj6vwv8+AGgSuq/C/z7oNAI+r8L/Pvhxfj4="),
+"format": 34359742487,
+"index_count": 120,
+"index_data": PackedByteArray("AgA2AAAAAAABAAIANwA4AAUABQAGADcAOAA3AAcABwAIADgADQAOADkAOQA6AA0AOgA5AA8ADwAQADoAOwA8AAsACwAMADsAIwAkAD0APQA+ACMAEQA/ABMAEwAVABEAQABBABgAGAAZAEAAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgBCAEMAQwAlACIAJgAnACgAKAApACYARAAUABIAEgBFAEQAKgArACwALAAtACoARgAWABcAFwBHAEYAAwAEAEgASABJAAMALgAvADAAMAAxAC4ASgAJAAoACgBLAEoAMgAzADQANAA1ADIA"),
+"lods": [0.006412668, PackedByteArray("AAABAAIAAAACAAMAAwAEAAAABQAGAAcABwAIAAUACQAKAAsACwAMAAkADQAOAA8ADwAQAA0AEQASABMAEQAUABIAEwAVABEAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgAjACQAJAAlACIAJgAnACgAKAApACYAKgArACwALAAtACoALgAvADAAMAAxAC4AMgAzADQANAA1ADIA")],
+"material": SubResource("StandardMaterial3D_wn5ko"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 76,
+"vertex_data": PackedByteArray("l0reugrXI7wAAAAASTyOugrXI7wK1yO8CtcjvArXI7wK1yO8CtcjvArXI7wK1yM8G7A2ugrXI7wK1yM8CtcjvArXI7wK1yO8CtcjvArXIzwK1yO8CtcjvArXIzwK1yM8CtcjvArXI7wK1yM88T7HuQrXI7wK1yM8CtcjPArXI7wK1yM8CtcjPArXI7wK1yO8cQpUugrXI7wK1yO8CtcjPArXI7wK1yM8CtcjPArXIzwK1yM8CtcjPArXIzwK1yO8CtcjPArXI7wK1yO82K2TuwzXIzyPwnUvCtcjvArXIzwK1yM8CtcjvArXIzwK1yO8/YPdOgrXIzwK1yM8STyOugrXIzwK1yO8CtcjPArXIzwK1yM8QG5FOwrXIzwK1yM8PXZBuArXIzwK1yO8CtcjPArXIzwK1yO8STyOugrXIzwK1yO8STyOugrXI7wK1yO8l0reugrXI7wAAAAA2K2TuwzXIzyPwnUv/YPdOgrXIzwK1yM82K2TuwzXIzyPwnUvl0reugrXI7wAAAAAG7A2ugrXI7wK1yM8PXZBuArXIzwK1yO8QG5FOwrXIzwK1yM88T7HuQrXI7wK1yM8cQpUugrXI7wK1yO8STyOugrXI7wK1yO8STyOugrXIzwK1yO8CtcjvArXIzwK1yO8CtcjvArXI7wK1yO8CtcjPArXI7wK1yO8CtcjPArXIzwK1yO8PXZBuArXIzwK1yO8cQpUugrXI7wK1yO8CtcjPArXI7wK1yM88T7HuQrXI7wK1yM8QG5FOwrXIzwK1yM8CtcjPArXIzwK1yM8G7A2ugrXI7wK1yM8CtcjvArXI7wK1yM8CtcjvArXIzwK1yM8/YPdOgrXIzwK1yM8CtcjvArXI7wAAAAACtcjvArXIzwAAAAACtcjvArXI7wAAAAACtcjPArXIzwAAAAACtcjPArXI7wAAAAAOk4QOwrXI7wAAAAACtcjPArXI7wAAAAAOk4QOwrXI7wAAAAAqA6JuwrXIzwAAAAACtcjvArXIzwAAAAACtcjPArXIzwAAAAAqA6JuwrXIzwAAAAAqA6JuwrXIzwAAAAAOk4QOwrXI7wAAAAA2K2TuwzXIzyPwnUvCtcjvArXIzwAAAAACtcjPArXIzwAAAAAqA6JuwrXIzwAAAAAl0reugrXI7wAAAAACtcjvArXI7wAAAAAOk4QOwrXI7wAAAAACtcjPArXI7wAAAAA/38AAC12/7//fwAAWGz/v/9/AABLdP+//38AALOL/7//fwAAppP/vwAA/39JgP//AAD/f0mA//8AAP9/SYD//wAA/39JgP///38AAFhs/7//fwAA63P/v/9/AAATjP+//38AAKaT/7////9//3/zv////3//f/O/////f/9/87////9//3/zv/9///////z+/3///wAAcIL/f/////9w/v9///8AAIaD/3//////u/3/f/////////9///8AANn7/3////7/1oL/f////v8AgKLkEYeSauK/ouQRh8xqYb+i5BGHs2qYv6LkEYeKahfAAf+Xoq6hVsAB/5eipaFlwAH/l6K5oUHAAf+XosOhL8AHD/Jq/P9og/MdqXgMAAD08x2peFMB1IsHD/Jq4foP/f////8AAP+//////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//////wAA/7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//38AAP9//78AAP9/SYD//wAA/39JgP//////f/9/87////9//3/zv/9/AADNiv+//38AAP9//7/zHal4tQDni/MdqXiOAAn0/3//////////f////v9fgv9////+/5iEBw/yavj9fYMHD/JqBP3c/P9///8AAM2B/3//////AID/f///AACB+/9///8AAPP4/38AAA+K/7//fwAA/3//v/9/AABmdf+//38AAP9//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qeyh4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ohh8"]
+albedo_texture = ExtResource("1_py2du")
+
+[node name="container broken 2" type="MeshInstance3D" unique_id=714786293]
+transform = Transform3D(200, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+mesh = SubResource("ArrayMesh_llne8")
+surface_material_override/0 = SubResource("StandardMaterial3D_3ohh8")

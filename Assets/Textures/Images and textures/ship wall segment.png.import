@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blud75yovgwqc"
-path.s3tc="res://.godot/imported/Broken Container.png-aa65828686948af1e82e36d076d96f2b.s3tc.ctex"
+uid="uid://chk2gkyon1jo3"
+path.s3tc="res://.godot/imported/ship wall segment.png-5c9ac4b5df1b6eb9e3d3a068e03543c0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Images and textures/Broken Container.png"
-dest_files=["res://.godot/imported/Broken Container.png-aa65828686948af1e82e36d076d96f2b.s3tc.ctex"]
+source_file="res://Assets/Textures/Images and textures/ship wall segment.png"
+dest_files=["res://.godot/imported/ship wall segment.png-5c9ac4b5df1b6eb9e3d3a068e03543c0.s3tc.ctex"]
 
 [params]
 
