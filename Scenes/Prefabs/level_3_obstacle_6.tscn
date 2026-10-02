@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://dtfkvceom7xjf"]
+
+[ext_resource type="Script" uid="uid://n8bybsavwmic" path="res://Scripts/obstacle_movement_script.gd" id="1_8s8k2"]
+[ext_resource type="PackedScene" uid="uid://ubtckanldefg" path="res://Scenes/Prefabs/Level Parts/container_red.tscn" id="2_rbpaq"]
+[ext_resource type="Texture2D" uid="uid://bwq5lua6upnfw" path="res://Assets/Textures/Container.png" id="3_vvu08"]
+[ext_resource type="PackedScene" uid="uid://bqjckkijclmmu" path="res://Scenes/Prefabs/Level Parts/catwalk.tscn" id="4_383bd"]
+[ext_resource type="PackedScene" uid="uid://d3lpn2i0ecjcr" path="res://Scenes/Prefabs/Level Parts/container_crane.tscn" id="5_8mt30"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fahp"]
+albedo_color = Color(0.3777742, 0.30044654, 0.16582465, 1)
+albedo_texture = ExtResource("3_vvu08")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bc3bv"]
+data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qk2o7"]
+radius = 0.001
+
+[sub_resource type="Animation" id="Animation_qqvpf"]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sl4gg"]
+resource_name = "obstacle_move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-100, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8yb0b"]
+_data = {
+&"RESET": SubResource("Animation_qqvpf"),
+&"obstacle_move": SubResource("Animation_sl4gg")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekbdo"]
+albedo_color = Color(0.54317635, 0.11722743, 0, 1)
+albedo_texture = ExtResource("3_vvu08")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_guwnc"]
+data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vwc5"]
+albedo_color = Color(0.38613427, 0.22367948, 0.16968262, 1)
+albedo_texture = ExtResource("3_vvu08")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7w3e"]
+albedo_color = Color(0.42597133, 0.208864, 0.47927064, 1)
+albedo_texture = ExtResource("3_vvu08")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0aaux"]
+data = PackedVector3Array(-0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, 0.01, 0.01, -0.01, -0.01, 0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, -0.01, -0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.01, -0.01, 0.01, 0.01, 0.01)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_58dmk"]
+radius = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sex1v"]
+albedo_color = Color(0.5372549, 0.43137255, 0.03529412, 1)
+albedo_texture = ExtResource("3_vvu08")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1339562007]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_8s8k2")
+
+[node name="container" parent="." unique_id=1283765612 instance=ExtResource("2_rbpaq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_0fahp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1182817157]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_bc3bv")
+
+[node name="Edges" type="StaticBody3D" parent="." unique_id=1662414132]
+collision_layer = 2
+
+[node name="Left Edge" type="CollisionShape3D" parent="Edges" unique_id=536903816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 1.1995001, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="Left Edge2" type="CollisionShape3D" parent="Edges" unique_id=1536231035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174188589]
+libraries/ = SubResource("AnimationLibrary_8yb0b")
+autoplay = &"obstacle_move"
+
+[node name="container3" parent="." unique_id=1906016497 instance=ExtResource("2_rbpaq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ekbdo")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=991742172]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 5, 0)
+shape = SubResource("ConcavePolygonShape3D_guwnc")
+
+[node name="Edges3" type="StaticBody3D" parent="." unique_id=522137942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 6, 0)
+collision_layer = 2
+
+[node name="Left Edge" type="CollisionShape3D" parent="Edges3" unique_id=1791574016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0995, 0.28714418, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="Left Edge2" type="CollisionShape3D" parent="Edges3" unique_id=1544227336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 0.2876439, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="container4" parent="." unique_id=968351321 instance=ExtResource("2_rbpaq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_4vwc5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=2044150385]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_bc3bv")
+
+[node name="Edges4" type="StaticBody3D" parent="." unique_id=1334788325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, 0)
+collision_layer = 2
+
+[node name="Left Edge" type="CollisionShape3D" parent="Edges4" unique_id=421224548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 1.1995001, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="Left Edge2" type="CollisionShape3D" parent="Edges4" unique_id=2118107876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, 0)
+shape = SubResource("SphereShape3D_qk2o7")
+
+[node name="catwalk4" parent="." unique_id=28606633 instance=ExtResource("4_383bd")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 4, 3, 2.4)
+
+[node name="catwalk5" parent="." unique_id=1702674783 instance=ExtResource("4_383bd")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 6, 3, 2.4)
+
+[node name="catwalk6" parent="." unique_id=1077508966 instance=ExtResource("4_383bd")]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 8, 3, 2.4)
+
+[node name="container5" parent="." unique_id=1105555334 instance=ExtResource("2_rbpaq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 10, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_b7w3e")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=943088230]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 0, 10, 0)
+shape = SubResource("ConcavePolygonShape3D_0aaux")
+
+[node name="Left Edge" type="CollisionShape3D" parent="." unique_id=217782141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 11.1995, 0)
+shape = SubResource("SphereShape3D_58dmk")
+
+[node name="Left Edge2" type="CollisionShape3D" parent="." unique_id=605740970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 11.2, 0)
+shape = SubResource("SphereShape3D_58dmk")
+
+[node name="container6" parent="." unique_id=1058537291 instance=ExtResource("2_rbpaq")]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 10, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_sex1v")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=720395279]
+transform = Transform3D(311.45398, 0, 0, 0, -5.7699026e-06, 132, 0, -132, -5.7699026e-06, 6.3, 10, 0)
+shape = SubResource("ConcavePolygonShape3D_0aaux")
+
+[node name="Left Edge3" type="CollisionShape3D" parent="." unique_id=142761301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1995, 11.1995, 0)
+shape = SubResource("SphereShape3D_58dmk")
+
+[node name="Left Edge4" type="CollisionShape3D" parent="." unique_id=1792383225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0999994, 11.2, 0)
+shape = SubResource("SphereShape3D_58dmk")
+
+[node name="container crane" parent="." unique_id=712299199 instance=ExtResource("5_8mt30")]
+transform = Transform3D(150, 0, 0, 0, -6.5567083e-06, 150, 0, -150, -6.5567083e-06, 0, 12, 0)
+
+[node name="container crane2" parent="." unique_id=423685149 instance=ExtResource("5_8mt30")]
+transform = Transform3D(150, 0, 0, 0, -6.5567083e-06, 150, 0, -150, -6.5567083e-06, 6.3, 12, 0)
