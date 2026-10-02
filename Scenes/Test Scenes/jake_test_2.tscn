@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d0r0su1dxiej1" path="res://Scenes/Prefabs/foreground_spawner.tscn" id="11_j2qhu"]
 [ext_resource type="PackedScene" uid="uid://gxaxti6cvb4o" path="res://Scenes/Prefabs/background_spawner.tscn" id="13_t74wh"]
 [ext_resource type="Script" uid="uid://dy1e1jfnsb4t5" path="res://Scripts/lose_barrier.gd" id="7_edppp"]
+[ext_resource type="PackedScene" uid="uid://cmqsscwst3q4n" path="res://Scenes/Test Scenes/score.tscn" id="8_1qn4a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -107,5 +108,7 @@ debug_color = Color(0.9882353, 0, 0.31764707, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 shape = SubResource("BoxShape3D_me57e")
 debug_color = Color(0.9882353, 0, 0.31764707, 1)
+
+[node name="Score" parent="." unique_id=2032495022 instance=ExtResource("8_1qn4a")]
 
 [connection signal="body_entered" from="LoseBarrier" to="LoseBarrier" method="_on_body_entered"]
