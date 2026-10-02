@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwq5lua6upnfw"
-path.s3tc="res://.godot/imported/Container.png-ce6bb604e5d7b9d52459cda11e6473e4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Container.png-e920f567eb03e71eb5e1ec9bc5aa8074.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/Container.png"
-dest_files=["res://.godot/imported/Container.png-ce6bb604e5d7b9d52459cda11e6473e4.s3tc.ctex"]
+source_file="res://Assets/Textures/Container.png"
+dest_files=["res://.godot/imported/Container.png-e920f567eb03e71eb5e1ec9bc5aa8074.s3tc.ctex"]
 
 [params]
 

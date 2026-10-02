@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bfx16quprgiu4" path="res://Scenes/Prefabs/Level Parts/foreground.tscn" id="10_45cum"]
 [ext_resource type="PackedScene" uid="uid://d0r0su1dxiej1" path="res://Scenes/Prefabs/foreground_spawner.tscn" id="11_j2qhu"]
 [ext_resource type="PackedScene" uid="uid://gxaxti6cvb4o" path="res://Scenes/Prefabs/background_spawner.tscn" id="13_t74wh"]
+[ext_resource type="Script" uid="uid://dy1e1jfnsb4t5" path="res://Scripts/lose_barrier.gd" id="7_edppp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjhd5"]
 
@@ -30,6 +31,18 @@ sky = SubResource("Sky_owv4k")
 
 [sub_resource type="QuadMesh" id="QuadMesh_edppp"]
 flip_faces = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qk2o7"]
+size = Vector3(1, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_de83b"]
+size = Vector3(16, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_su1mf"]
+size = Vector3(1, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me57e"]
+size = Vector3(16, 1, 1)
 
 [node name="JakeTest2" type="Node3D" unique_id=1856755249]
 
@@ -72,3 +85,27 @@ obstacleList = Array[PackedScene]([ExtResource("10_45cum")])
 
 [node name="BackgroundSpawner" parent="." unique_id=986977929 instance=ExtResource("13_t74wh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 4, -8)
+[node name="LoseBarrier" type="Area3D" parent="." unique_id=1342699419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+script = ExtResource("7_edppp")
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="LoseBarrier" unique_id=454459548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
+shape = SubResource("BoxShape3D_qk2o7")
+debug_color = Color(0.9882353, 0, 0.31764707, 1)
+
+[node name="CollisionPolygon3D2" type="CollisionShape3D" parent="LoseBarrier" unique_id=571255732]
+shape = SubResource("BoxShape3D_de83b")
+debug_color = Color(0.9882353, 0, 0.31764707, 1)
+
+[node name="CollisionPolygon3D3" type="CollisionShape3D" parent="LoseBarrier" unique_id=627775133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+shape = SubResource("BoxShape3D_su1mf")
+debug_color = Color(0.9882353, 0, 0.31764707, 1)
+
+[node name="CollisionPolygon3D4" type="CollisionShape3D" parent="LoseBarrier" unique_id=673799587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+shape = SubResource("BoxShape3D_me57e")
+debug_color = Color(0.9882353, 0, 0.31764707, 1)
+
+[connection signal="body_entered" from="LoseBarrier" to="LoseBarrier" method="_on_body_entered"]

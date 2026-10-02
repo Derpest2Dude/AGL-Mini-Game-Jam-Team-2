@@ -13,7 +13,7 @@ var move_speed = BASE_SPEED
 var direction = 1
 var mantling = false
 
-#replace with platform speed
+#TODO: replace with platform speed
 const PLATFORM_SPEED = 10
 
 func _physics_process(delta: float) -> void:
