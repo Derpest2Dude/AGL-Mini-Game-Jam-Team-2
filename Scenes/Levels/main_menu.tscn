@@ -50,5 +50,20 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
+[node name="Label" type="Label" parent="." unique_id=1030645574]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 184.0
+offset_right = 56.0
+offset_bottom = 207.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "FreightRunner"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
