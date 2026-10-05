@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var animation: AnimatedSprite3D = $Body/AnimatedSprite3D
 
 const GRAVITY = Vector3(0, -9.8, 0) * 5
 
@@ -48,13 +49,21 @@ func _physics_process(delta: float) -> void:
 	if jump_accel >= 0:
 		jump_accel -= delta * JUMP_DECEL
 
+	if Input.is_action_just_released("move_right"):
+		animation.speed_scale = 1
+	elif Input.is_action_just_released("move_right"):
+			animation.speed_scale = 1
+			
+
 	# Get the input direction and handle the movement/deceleration.
 	if Input.is_action_just_pressed("move_left"):
 		direction = -1
 		move_speed = BASE_SPEED + 3 - PLATFORM_SPEED
+		animation.speed_scale = 0.75
 	elif Input.is_action_just_pressed("move_right"):
 		direction = 1
 		move_speed = BASE_SPEED + PLATFORM_SPEED
+		animation.speed_scale = 1.5
 	if is_on_floor():
 		if (Input.is_action_pressed("move_left") and direction == -1) or (Input.is_action_pressed("move_right") and direction == 1):
 			if velocity.normalized().x == direction:
